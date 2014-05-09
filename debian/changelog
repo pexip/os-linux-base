@@ -1,3 +1,9 @@
+linux-base (3.5pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Fri, 09 May 2014 18:38:00 +0000
+
 linux-base (3.5) unstable; urgency=low
 
   * debian/control: Set Multi-Arch: foreign to allow for installation
