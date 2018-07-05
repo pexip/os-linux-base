@@ -8,7 +8,7 @@ Standards-Version: 3.9.1
 Build-Depends: debhelper (>> 7)
 Vcs-Svn: svn://svn.debian.org/svn/kernel/dists/trunk/linux-base/
 Vcs-Browser: http://svn.debian.org/viewvc/kernel/dists/trunk/linux-base/
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: linux-base
 Architecture: all
