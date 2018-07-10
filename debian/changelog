@@ -1,3 +1,9 @@
+linux-base (4.5pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 11:27:43 +0000
+
 linux-base (4.5) unstable; urgency=medium
 
   [ Salvatore Bonaccorso ]
