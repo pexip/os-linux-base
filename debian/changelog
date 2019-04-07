@@ -1,3 +1,28 @@
+linux-base (4.6) unstable; urgency=medium
+
+  * debian/control: Remove everyone else from Uploaders field, since no-one
+    else has actually uploaded this
+  * Fix typo in linux-update-symlinks.1, thanks to Sven Joachim
+    (Closes: #876215)
+  * debian/control: Point Vcs URLs to Salsa
+  * linux-check-removal: Assume we're in a container if
+    /run/systemd/container exists
+  * linux-check-removal: Work around debconf cache management bug (see #908001)
+  * Add unit tests for image_list() function used by linux-version
+  * Change image_list() to match /boot/vmlinu[xz]-* regardless of architecture
+    (Closes: #925379)
+  * Take over kernel-img.conf(5) manual page from kernel-common
+    (Closes: #925415)
+  * kernel-img.conf(5): Update various text to be independent of kernel-package
+  * kernel-img.conf(5): Document differences in support between package
+    creators
+  * kernel-img.conf(5): Document variables used by linux-update-symlinks
+  * kernel-img.conf(5): Fix some spelling errors
+  * kernel-img.conf(5): Update the summary of what uses the file
+  * Add translations of kernel-img.conf(5) from kernel-package
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun, 07 Apr 2019 17:58:17 +0100
+
 linux-base (4.5) unstable; urgency=medium
 
   [ Salvatore Bonaccorso ]

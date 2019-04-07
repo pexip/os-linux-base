@@ -1,11 +1,27 @@
 use strict;
 use warnings;
 use Test;
+use Text::Glob ();
 
-use DebianLinux qw(version_cmp read_kernelimg_conf);
+# Mock the glob function used in image_list()
+my @glob_filenames;
+BEGIN {
+    no strict 'refs';
+
+    *CORE::GLOBAL::glob = sub : prototype(_;) {
+	if ($#glob_filenames >= 0) {
+	    my $pattern = ($#_ >= 0 ? $_[0] : $_);
+	    return Text::Glob::match_glob($pattern, @glob_filenames);
+	} else {
+	    return CORE::glob(@_);
+	}
+    }
+}
+
+use DebianLinux qw(version_cmp read_kernelimg_conf image_list);
 
 BEGIN {
-    plan test => 41;
+    plan test => 44;
 }
 
 ## version_cmp
@@ -179,3 +195,47 @@ EOT
 		  do_symlinks =>	1,
 		  image_dest =>		'/boot',
 	      }));
+
+## image_list
+
+@glob_filenames = qw(/boot/ipxe.efi /boot/initrd.img-4.19.0-4-amd64
+    /boot/lost+found /boot/.. /boot/System.map-4.19.0-4-amd64
+    /boot/config-4.19.0-3-amd64 /boot/vmlinuz-4.19.0-4-amd64
+    /boot/initrd.img-4.19.0-3-amd64 /boot/grub
+    /boot/vmlinuz-4.19.0-3-amd64 /boot/efi /boot/ipxe.lkrn
+    /boot/. /boot/config-4.19.0-4-amd64
+    /boot/System.map-4.19.0-3-amd64);
+ok([image_list()] ~~
+   [['4.19.0-4-amd64', '/boot/vmlinuz-4.19.0-4-amd64'],
+    ['4.19.0-3-amd64', '/boot/vmlinuz-4.19.0-3-amd64']]);
+@glob_filenames = qw(/boot/.. /boot/vmlinux /boot/vmlinux.old
+    /boot/initrd.img-4.9.0-7-powerpc64le
+    /boot/vmlinux-4.9.0-7-powerpc64le
+    /boot/System.map-4.9.0-7-powerpc64le /boot/initrd.img.old
+    /boot/System.map-4.9.0-6-powerpc64le /boot/.
+    /boot/config-4.9.0-7-powerpc64le
+    /boot/System.map-4.9.0-8-powerpc64le
+    /boot/vmlinux-4.9.0-8-powerpc64le
+    /boot/initrd.img-4.9.0-6-powerpc64le
+    /boot/vmlinux-4.9.0-6-powerpc64le
+    /boot/initrd.img-4.9.0-8-powerpc64le
+    /boot/config-4.9.0-8-powerpc64le /boot/grub /boot/initrd.img
+    /boot/config-4.9.0-6-powerpc64le);
+ok([image_list()] ~~
+   [['4.9.0-7-powerpc64le', '/boot/vmlinux-4.9.0-7-powerpc64le'],
+    ['4.9.0-8-powerpc64le', '/boot/vmlinux-4.9.0-8-powerpc64le'],
+    ['4.9.0-6-powerpc64le', '/boot/vmlinux-4.9.0-6-powerpc64le']]);
+@glob_filenames = qw(/boot/vmlinux-4.19.0-3-m68k
+    /boot/vmlinux-4.19.0-4-m68k /boot/vmlinuz-4.1.0-2-m68k
+    /boot/config-4.19.0-3-m68k /boot/config-4.19.0-4-m68k
+    /boot/config-4.1.0-2-m68k /boot/initrd.img-4.19.0-3-m68k
+    /boot/initrd.img-4.19.0-4-m68k /boot/initrd.img-4.1.0-2-m68k
+    /boot/System.map-4.19.0-3-m68k /boot/System.map-4.19.0-4-m68k
+    /boot/System.map-4.1.0-2-m68k);
+ok([image_list()] ~~
+   [['4.19.0-3-m68k', '/boot/vmlinux-4.19.0-3-m68k'],
+    ['4.19.0-4-m68k', '/boot/vmlinux-4.19.0-4-m68k'],
+    ['4.1.0-2-m68k', '/boot/vmlinuz-4.1.0-2-m68k']]);
+
+# Disable mocking
+@glob_filenames = ();
