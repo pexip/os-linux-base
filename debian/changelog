@@ -1,3 +1,9 @@
+linux-base (4.6pexip1) pexip; urgency=medium
+
+  * Migrate to Buster
+
+ -- Vincent Sanders <vince@pexip.com>  Sat, 29 Feb 2020 16:13:51 +0000
+
 linux-base (4.6) unstable; urgency=medium
 
   * debian/control: Remove everyone else from Uploaders field, since no-one
