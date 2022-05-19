@@ -1,3 +1,56 @@
+linux-base (4.9) unstable; urgency=medium
+
+  [ Ben Hutchings ]
+  * d/salsa-ci.yml: Add CI configuration for salsa.debian.org
+  * d/control: Use my debian.org email in Uploaders field
+  * Remove perf wrappers, as linux-perf now provides an unversioned perf
+    command (Closes: #983314, #990165)
+    - d/control: Add versioned Breaks on linux-perf to avoid leaving users
+      with no perf command
+  * linux-version: Skip detached signature files when listing kernels
+    (Closes: #906873)
+
+  [ dann frazier ]
+  * linux-version: Fix sorting of versions provided via stdin to match
+    the output when provided via argv (Closes: #987851)
+
+  [ Gioele Barabucci ]
+  * debian/NEWS: Remove outdated file
+  * po/fr: Store in canonical form
+  * debian/rules: Remove stray `--with bash-completion`
+  * debian/control: Remove unused dependency on `bash-completion`
+
+ -- Ben Hutchings <benh@debian.org>  Thu, 19 May 2022 04:05:24 +0200
+
+linux-base (4.8) unstable; urgency=medium
+
+  * po: fr.po: Updated French man page translation (Closes: #1003731)
+  * debian/copyright: Update copyright information for German and French
+    translations
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 16 Jan 2022 17:42:36 +0100
+
+linux-base (4.7) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * man: perf.1: Remove doubled word 'are' in manpage.
+    Thanks to Ivan Kharpalev for the report and patch (Closes: #931506)
+  * po: de.po: Updated German man page translation.
+    Thanks to Helge Kreutzmann (Closes: #977939)
+  * Set Rules-Requires-Root to no
+  * Annotate test-only build dependencies with <!nocheck>
+  * debian/copyright: Convert to machine-readable format 1.0
+  * Declare compliance with Debian policy 4.6.0
+  * postinst: Use 'set -e' in script body instead of passing -e to shell in
+    shebang line
+  * Add myself to Uploaders
+
+  [ Debian Janitor ]
+  * Bump debhelper from deprecated 9 to 13.
+  * Set debhelper-compat version in Build-Depends.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 27 Dec 2021 13:21:16 +0100
+
 linux-base (4.6) unstable; urgency=medium
 
   * debian/control: Remove everyone else from Uploaders field, since no-one

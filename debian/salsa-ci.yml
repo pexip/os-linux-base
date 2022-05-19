@@ -1,0 +1,13 @@
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+
+variables:
+  RELEASE: 'unstable'
+  # We only build arch:all packages
+  SALSA_CI_DISABLE_BLHC: 'true'
+  SALSA_CI_DISABLE_BUILD_PACKAGE_I386: 'true'
+  SALSA_CI_DISABLE_BUILD_PACKAGE_ANY: 'true'
+  SALSA_CI_DISABLE_CROSSBUILD_ARM64: 'true'
+  # Currently triggering falsely (bug #973313)
+  SALSA_CI_LINTIAN_SUPPRESS_TAGS: 'groff-message'

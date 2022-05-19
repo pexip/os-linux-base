@@ -1,4 +1,5 @@
-#!/bin/sh -e
+#!/bin/sh
+set -e
 
 # Install debconf templates
 . /usr/share/debconf/confmodule

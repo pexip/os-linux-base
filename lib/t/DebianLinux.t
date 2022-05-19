@@ -21,7 +21,7 @@ BEGIN {
 use DebianLinux qw(version_cmp read_kernelimg_conf image_list);
 
 BEGIN {
-    plan test => 44;
+    plan test => 45;
 }
 
 ## version_cmp
@@ -236,6 +236,14 @@ ok([image_list()] ~~
    [['4.19.0-3-m68k', '/boot/vmlinux-4.19.0-3-m68k'],
     ['4.19.0-4-m68k', '/boot/vmlinux-4.19.0-4-m68k'],
     ['4.1.0-2-m68k', '/boot/vmlinuz-4.1.0-2-m68k']]);
+@glob_filenames = qw(/boot/config-4.16.0-2-amd64 /boot/config-4.17.0-1-amd64
+    /boot/initrd.img-4.16.0-2-amd64 /boot/initrd.img-4.17.0-1-amd64
+    /boot/System.map-4.16.0-2-amd64 /boot/System.map-4.17.0-1-amd64
+    /boot/vmlinuz-4.16.0-2-amd64 /boot/vmlinuz-4.16.0-2-amd64.sig
+    /boot/vmlinuz-4.17.0-1-amd64 /boot/vmlinuz-4.17.0-1-amd64.sig);
+ok([image_list()] ~~
+   [['4.16.0-2-amd64', '/boot/vmlinuz-4.16.0-2-amd64'],
+    ['4.17.0-1-amd64', '/boot/vmlinuz-4.17.0-1-amd64']]);
 
 # Disable mocking
 @glob_filenames = ();

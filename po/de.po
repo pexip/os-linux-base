@@ -2,13 +2,14 @@
 # Copyright (C) 1996-2006 Manoj Srivastava.
 # This file is distributed under the GPL version 2 or later.
 # Copyright (C) of this file 2011, 2012 Chris Leick.
+# Helge Kreutzmann <debian@helgejfell.de>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: linux-base\n"
+"Project-Id-Version: linux-base 4.6\n"
 "Report-Msgid-Bugs-To: linux-base@packages.debian.org\n"
 "POT-Creation-Date: 2019-03-24 21:37+0000\n"
-"PO-Revision-Date: 2019-03-24 21:54+0000\n"
+"PO-Revision-Date: 2020-12-23 07:39+0100\n"
 "Last-Translator: Ben Hutchings <ben@decadent.org.uk>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -73,22 +74,16 @@ msgstr "BESCHREIBUNG"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:38
-#, fuzzy
-#| msgid ""
-#| "The file I</etc/kernel-img.conf> is a simple file looked at by the kernel "
-#| "image post installation process to allow local options for handling some "
-#| "aspects of the installation, overriding the defaults built into the image "
-#| "itself."
 msgid ""
 "The file I</etc/kernel-img.conf> is used by the kernel package installation "
 "and removal process to allow local options for handling some aspects of the "
 "installation.  Most configuration variables apply only to kernel image "
 "packages."
 msgstr ""
-"Die Datei I</etc/kernel-img.conf> ist eine einfache Datei, die vor dem "
-"Installationsprozess des Kernel-Images eingesehen wird, um lokale Optionen "
-"zu ermöglichen, die einige Aspekte der Installation behandeln und die "
-"Vorgaben, die im Image selbst eingebaut sind, außer Kraft setzen."
+"Die Datei I</etc/kernel-img.conf> wird von dem Kernelpaket-Installations- "
+"und -Entfernungsprozess verwandt, um lokale Optionen "
+"zu ermöglichen, die einige Aspekte der Installation behandeln. Die meisten "
+"Konfigurationsvariablen gelten nur für Kernel-Abbild-Pakete."
 
 #. type: Plain text
 #: man/kernel-img.conf.5:41
@@ -96,6 +91,9 @@ msgid ""
 "Not all kernel image package creators support this file, or all the "
 "configuration variables.  Support status for the file itself is:"
 msgstr ""
+"Nicht alle Erstellprogramme für Kernelabbilder unterstützen diese Datei oder "
+"alle Konfigurationsvariablen. Der Unterstützungsstatus für die Datei selbst "
+"ist wie folgt:"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:44 man/kernel-img.conf.5:74 man/kernel-img.conf.5:88
@@ -108,7 +106,7 @@ msgstr ""
 #: man/kernel-img.conf.5:402 man/kernel-img.conf.5:416
 #, no-wrap
 msgid "B<Package creator>"
-msgstr ""
+msgstr "B<Paketersteller>"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:44 man/kernel-img.conf.5:74 man/kernel-img.conf.5:88
@@ -121,7 +119,7 @@ msgstr ""
 #: man/kernel-img.conf.5:402 man/kernel-img.conf.5:416
 #, no-wrap
 msgid "B<Status>"
-msgstr ""
+msgstr "B<Status>"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:45 man/kernel-img.conf.5:75 man/kernel-img.conf.5:89
@@ -134,7 +132,7 @@ msgstr ""
 #: man/kernel-img.conf.5:403 man/kernel-img.conf.5:417
 #, no-wrap
 msgid "Debian linux source package"
-msgstr ""
+msgstr "Debian-Linux-Quellpaket"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:45 man/kernel-img.conf.5:46 man/kernel-img.conf.5:47
@@ -146,7 +144,7 @@ msgstr ""
 #: man/kernel-img.conf.5:421
 #, no-wrap
 msgid "supported"
-msgstr ""
+msgstr "unterstützt"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:46 man/kernel-img.conf.5:76 man/kernel-img.conf.5:90
@@ -159,7 +157,7 @@ msgstr ""
 #: man/kernel-img.conf.5:404 man/kernel-img.conf.5:419
 #, no-wrap
 msgid "Ubuntu linux source package"
-msgstr ""
+msgstr "Ubuntu-Linux-Quellpaket"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:47 man/kernel-img.conf.5:77 man/kernel-img.conf.5:91
@@ -172,13 +170,13 @@ msgstr ""
 #: man/kernel-img.conf.5:405 man/kernel-img.conf.5:421
 #, no-wrap
 msgid "kernel-package"
-msgstr ""
+msgstr "kernel-package"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:48
 #, no-wrap
 msgid "make deb-pkg"
-msgstr ""
+msgstr "make deb-pkg"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:48 man/kernel-img.conf.5:320 man/kernel-img.conf.5:321
@@ -189,7 +187,7 @@ msgstr ""
 #: man/kernel-img.conf.5:403 man/kernel-img.conf.5:404
 #, no-wrap
 msgid "ignored"
-msgstr ""
+msgstr "ignoriert"
 
 # Punctuation characters at the end are included in the highlighting, see
 # http://www.din-5008-richtlinien.de/hervorheben.php
@@ -216,7 +214,7 @@ msgstr ""
 #: man/kernel-img.conf.5:66
 #, no-wrap
 msgid "B<do_symlinks>"
-msgstr ""
+msgstr "B<do_symlinks>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:71
@@ -225,12 +223,16 @@ msgid ""
 "kernel and initramfs images, as described in I<linux-update-symlinks>(8).  "
 "This variable is set by default."
 msgstr ""
+"Falls gesetzt, werden die Skripte postinst und postrm Symlinks auf die "
+"Standard-Kernel- und Initramfs-Abbilder so verwalten, wie dies in I<linux-"
+"update-symlinks>(8) beschrieben ist. Diese Variable ist standardmäßig "
+"gesetzt."
 
 #. type: tbl table
 #: man/kernel-img.conf.5:77 man/kernel-img.conf.5:91 man/kernel-img.conf.5:105
 #, no-wrap
 msgid "ignored since v12.001;"
-msgstr ""
+msgstr "seit v12.001 ignoriert;"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:78 man/kernel-img.conf.5:92 man/kernel-img.conf.5:106
@@ -241,13 +243,13 @@ msgstr ""
 #: man/kernel-img.conf.5:307 man/kernel-img.conf.5:418
 #, no-wrap
 msgid "previously supported"
-msgstr ""
+msgstr "früher unterstützt"
 
 #. type: TP
 #: man/kernel-img.conf.5:80
 #, no-wrap
 msgid "B<image_dest>"
-msgstr ""
+msgstr "B<image_dest>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:85
@@ -255,6 +257,9 @@ msgid ""
 "Set this variable to the directory in which symlinks to the default kernel "
 "and initramfs images should be maintained.  The default value is I</>."
 msgstr ""
+"Setzen Sie diese Variable auf das Verzeichnis, in dem Symlinks auf die "
+"Standard-Kernel- und -Initramfs-Abbilder verwaltet werden sollen. Der "
+"Vorgabewert ist I</>."
 
 #. type: TP
 #: man/kernel-img.conf.5:94
@@ -268,6 +273,9 @@ msgid ""
 "If set, this has the same effect as I<image_dest\\ =\\ /boot> and overrides "
 "any other setting of B<image_dest>.  This variable is unset by default."
 msgstr ""
+"Falls gesetzt, hat dies den gleichen Effekt wie I<image_dest\\ =\\ /boot> und "
+"setzt jede andere Einstellung von B<image_dest> außer Kraft. Diese "
+"Variable ist standardmäßig nicht gesetzt."
 
 #. type: TP
 #: man/kernel-img.conf.5:108
@@ -277,24 +285,6 @@ msgstr "B<postinst_hook>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:139
-#, fuzzy
-#| msgid ""
-#| "B<DEPRECATED>: Set this variable to a script to be executed during "
-#| "installation. The path can be a relative path if the script lives in a "
-#| "safe path -- that is, if it lives in /bin, /sbin, /usr/bin, or /usr/sbin, "
-#| "or must be an absolute path instead. Before calling this script, the env "
-#| "variable B<STEM> shall be set to the value of the I<--stem> argument (or "
-#| "the default value, linux), and B<KERNEL_PACKAGE_VERSION> shall be set to "
-#| "the version of the kernel-package that created the package.  This script "
-#| "shall be called with two arguments, the first being the I<version> of the "
-#| "kernel image, and the second argument being the I<location> of the kernel "
-#| "image itself. Errors in the script shall cause the postinst to fail. "
-#| "Since debconf is in use before the script is called, this script should "
-#| "issue no diagnostic messages to stdout -- while the postinst does call "
-#| "B<db_stop>, debconf does not restore stdout, so messages to stdout "
-#| "disappear.  An example script for grub users is present in /usr/share/doc/"
-#| "kernel-package/ directory.  This script is run I<after> the scripts in /"
-#| "etc/kernel/postinst.d directory."
 msgid ""
 "B<DEPRECATED>: Set this variable to a script to be executed during "
 "installation. The path can be a relative path if the script lives in a safe "
@@ -319,7 +309,7 @@ msgstr ""
 "usr/sbin oder es muss stattdessen ein absoluter Pfad sein. Bevor Sie dieses "
 "Skript aufrufen, soll die Umgebungsvariable B<STEM> auf den Wert des "
 "Arguments I<--stem> (oder den Standardwert, linux) gesetzt werden und "
-"B<KERNEL_PACKAGE_VERSION> soll auf die Version von kernel-package gesetzt "
+"B<KERNEL_PACKAGE_VERSION> soll in durch Kernel-package erstellten Paketen auf die Version von kernel-package gesetzt "
 "werden, das dieses Paket erstellte. Dieses Skript soll mit zwei Argumenten "
 "aufgerufen werden. Das erste ist die I<Version> des Kernel-Images und das "
 "zweite der Speicherplatz des Kernel-Images selbst. Fehler im Skript sollen "
@@ -336,7 +326,7 @@ msgstr ""
 #: man/kernel-img.conf.5:208 man/kernel-img.conf.5:243
 #, no-wrap
 msgid "unsupported since v4.6.1-1;"
-msgstr ""
+msgstr "seit v4.6.1-1 nicht unterstützt;"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:145 man/kernel-img.conf.5:180
@@ -344,7 +334,7 @@ msgstr ""
 #: man/kernel-img.conf.5:306 man/kernel-img.conf.5:419
 #, no-wrap
 msgid "unsupported since v4.15.0-18.19;"
-msgstr ""
+msgstr "seit v4.15.0-18.19 nicht unterstützt;"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:147 man/kernel-img.conf.5:182
@@ -352,7 +342,7 @@ msgstr ""
 #: man/kernel-img.conf.5:278 man/kernel-img.conf.5:308
 #, no-wrap
 msgid "deprecated"
-msgstr ""
+msgstr "missbilligt"
 
 #. type: TP
 #: man/kernel-img.conf.5:149
@@ -362,23 +352,6 @@ msgstr "B<postrm_hook>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:174
-#, fuzzy
-#| msgid ""
-#| "B<DEPRECATED>: Set this variable to a script to be executed in the postrm "
-#| "(that is, after the image has been removed) after all the remove actions "
-#| "have been performed. The path can be a relative path if the script lives "
-#| "in a safe path -- that is, if it lives in /bin, /sbin, /usr/bin, or /usr/"
-#| "sbin, or must be an absolute path instead. The environment variable "
-#| "B<KERNEL_PACKAGE_VERSION> shall be set to the version of the kernel-"
-#| "package that created the package. This script shall be called with two "
-#| "arguments, the first being the I<version> of the kernel image, and the "
-#| "second argument being the I<location> of the kernel image itself. Errors "
-#| "in the script shall produce a warning message, but shall be otherwise "
-#| "ignored. Since debconf is in use before the script is called, this script "
-#| "should issue no diagnostic messages to stdout -- while the postinst does "
-#| "call B<db_stop>, debconf does not restore stdout, so messages to stdout "
-#| "disappear.  This script is run I<after> the scripts in /etc/kernel/postrm."
-#| "d directory."
 msgid ""
 "B<DEPRECATED>: Set this variable to a script to be executed in the postrm "
 "(that is, after the image has been removed) after all the remove actions "
@@ -401,7 +374,7 @@ msgstr ""
 "nachdem all Entfernungsaktionen durchgeführt wurden. Der Pfad kann relativ "
 "sein, falls das Skript in einem sicheren Pfad liegt – dies sind /bin, /"
 "sbin, /usr/bin oder /usr/sbin oder es muss stattdessen ein absoluter Pfad "
-"sein. Die Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll auf die Version "
+"sein. Die Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll in durch Kernel-package erstellten Paketen auf die Version "
 "von kernel-package gesetzt werden, das dieses Paket erstellte. Dieses Skript "
 "soll mit zwei Argumenten aufgerufen werden. Das erste ist die I<Version> des "
 "Kernel-Images und das zweite der Speicherplatz des Kernel-Images selbst. "
@@ -421,18 +394,6 @@ msgstr "B<preinst_hook>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:204
-#, fuzzy
-#| msgid ""
-#| "B<DEPRECATED>: Set this variable to a script to be executed before the "
-#| "package is unpacked, and can be used to put in additional checks. The "
-#| "path can be a relative path if the script lives in a safe path -- that "
-#| "is, if it lives in /bin, /sbin, /usr/bin, or /usr/sbin, or must be an "
-#| "absolute path instead. The environment variable B<KERNEL_PACKAGE_VERSION> "
-#| "shall be set to the version of the kernel-package that created the "
-#| "package. This script shall be called with two arguments, the first being "
-#| "the I<version> of the kernel image, and the second argument being the "
-#| "I<location> of the kernel image itself.  This script is run I<after> the "
-#| "scripts in /etc/kernel/preinst.d directory."
 msgid ""
 "B<DEPRECATED>: Set this variable to a script to be executed before the "
 "package is unpacked, and can be used to put in additional checks. The path "
@@ -450,7 +411,7 @@ msgstr ""
 "zusätzliche Prüfungen einzufließen. Der Pfad kann relativ sein, falls das "
 "Skript in einem sicheren Pfad liegt – dies sind /bin, /sbin, /usr/bin oder /"
 "usr/sbin oder es muss stattdessen ein absoluter Pfad sein. Die "
-"Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll auf die Version von kernel-"
+"Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll in durch Kernel-package erstellten Paketen auf die Version von kernel-"
 "package gesetzt werden, das dieses Paket erstellte. Dieses Skript soll mit "
 "zwei Argumenten aufgerufen werden. Das erste ist die I<Version> des Kernel-"
 "Images und das zweite der Speicherplatz des Kernel-Images selbst. Dieses "
@@ -465,22 +426,6 @@ msgstr "B<prerm_hook>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:239
-#, fuzzy
-#| msgid ""
-#| "B<DEPRECATED>: Set this variable to a script to be executed before the "
-#| "package files are removed (so any added files may be removed) . The path "
-#| "can be a relative path if the script lives in a safe path -- that is, if "
-#| "it lives in /bin, /sbin, /usr/bin, or /usr/sbin, or must be an absolute "
-#| "path instead. The environment variable B<KERNEL_PACKAGE_VERSION> shall be "
-#| "set to the version of the kernel-package that created the package. This "
-#| "script shall be called with two arguments, the first being the I<version> "
-#| "of the kernel image, and the second argument being the I<location> of the "
-#| "kernel image itself. Errors in the script shall cause the prerm to fail. "
-#| "Since debconf is in use before the script is called, this script should "
-#| "issue no diagnostic messages to stdout -- while the postinst does call "
-#| "B<db_stop>, debconf does not restore stdout, so messages to stdout "
-#| "disappear.  This script is run I<after> the scripts in /etc/kernel/prerm."
-#| "d directory."
 msgid ""
 "B<DEPRECATED>: Set this variable to a script to be executed before the "
 "package files are removed (so any added files may be removed) . The path can "
@@ -502,7 +447,7 @@ msgstr ""
 "Dateien entfernt werden können). Der Pfad kann relativ sein, falls das "
 "Skript in einem sicheren Pfad liegt – dies sind /bin, /sbin, /usr/bin oder /"
 "usr/sbin oder es muss stattdessen ein absoluter Pfad sein. Die "
-"Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll auf die Version von kernel-"
+"Umgebungsvariable B<KERNEL_PACKAGE_VERSION> soll in durch Kernel-package erstellten Paketen auf die Version von kernel-"
 "package gesetzt werden, das dieses Paket erstellte. Dieses Skript soll mit "
 "zwei Argumenten aufgerufen werden. Das erste ist die I<Version> des Kernel-"
 "Images und das zweite der Speicherplatz des Kernel-Images selbst. Fehler im "
@@ -556,7 +501,7 @@ msgstr ""
 #: man/kernel-img.conf.5:305
 #, no-wrap
 msgid "unsupported"
-msgstr ""
+msgstr "nicht unterstützt"
 
 #. type: TP
 #: man/kernel-img.conf.5:280
@@ -566,19 +511,6 @@ msgstr "B<header_postinst_hook>"
 
 #. type: Plain text
 #: man/kernel-img.conf.5:301
-#, fuzzy
-#| msgid ""
-#| "B<DEPRECATED>: Unlike the other hook variables, this is meant for a "
-#| "script run during the post inst of a headers package only. The path can "
-#| "be a relative path if the script lives in a safe path -- that is, if it "
-#| "lives in /bin, /sbin, /usr/bin, or /usr/sbin, or must be an absolute path "
-#| "instead. The environment variable B<KERNEL_PACKAGE_VERSION> shall be set "
-#| "to the version of the kernel-package that created the package. This "
-#| "script shall be called with two arguments, the first being the I<name> of "
-#| "the package being installed, and the second argument being the I<version> "
-#| "of the package being installed. Errors in the script shall cause the "
-#| "postinst to fail.  This script is run I<after> the scripts in /etc/kernel/"
-#| "header_postinst.d directory."
 msgid ""
 "B<DEPRECATED>: Unlike the other hook variables, this is meant for a script "
 "run during the post inst of a headers package only. The path can be a "
@@ -597,7 +529,7 @@ msgstr ""
 "Header-Pakets ausgeführt wird. Der Pfad kann relativ sein, falls das Skript "
 "in einem sicheren Pfad liegt – dies sind /bin, /sbin, /usr/bin oder /usr/"
 "sbin oder es muss stattdessen ein absoluter Pfad sein. Die Umgebungsvariable "
-"B<KERNEL_PACKAGE_VERSION> soll auf die Version von kernel-package gesetzt "
+"B<KERNEL_PACKAGE_VERSION> soll in durch Kernel-package erstellten Paketen auf die Version von kernel-package gesetzt "
 "werden, das dieses Paket erstellte. Dieses Skript soll mit zwei Argumenten "
 "aufgerufen werden. Das erste ist die I<Version> des Kernel-Images und das "
 "zweite der Speicherplatz des Kernel-Images selbst. Fehler im Skript sollen "
@@ -762,13 +694,13 @@ msgstr ""
 #: man/kernel-img.conf.5:417
 #, no-wrap
 msgid "unsupported since v4.4.1-1~exp1;"
-msgstr ""
+msgstr "seit v4.4.1-1~exp1 nicht unterstützt;"
 
 #. type: tbl table
 #: man/kernel-img.conf.5:420
 #, no-wrap
 msgid "previously ignored"
-msgstr ""
+msgstr "früher ignoriert"
 
 #. type: SH
 #: man/kernel-img.conf.5:423
@@ -783,6 +715,9 @@ msgid ""
 "includes example scripts suitable for dropping into I</etc/kernel/*.d> "
 "installed in I</usr/share/doc/kernel-common/examples>."
 msgstr ""
+"Die hier beschriebene Datei ist I</etc/kernel-img.conf>. B<kernel-common> "
+"enthält Beispielskripte, die zur Ablage in I</etc/kernel/*.d> geeignet sind. "
+"Diese werden unter I</usr/share/doc/kernel-common/examples> installiert."
 
 #. type: SH
 #: man/kernel-img.conf.5:430

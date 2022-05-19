@@ -88,6 +88,7 @@ sub image_list {
     my @results;
 
     for (glob("/boot/vmlinu[xz]-*")) {
+	next if /\.sig$/;  # skip detached signatures
 	push @results, [substr($_, length("/boot/vmlinu?-")), $_];
     }
     return @results;
