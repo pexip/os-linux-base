@@ -1,3 +1,9 @@
+linux-base (4.6pexip4) pexip-bullseye; urgency=medium
+
+  * Main bullseye build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Fri, 24 Jun 2022 14:03:45 +0100
+
 linux-base (4.6pexip3) pexip; urgency=medium
 
   * Initial bullseye build
