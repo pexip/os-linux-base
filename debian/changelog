@@ -1,3 +1,9 @@
+linux-base (4.9+pexip24u1) pexip; urgency=medium
+
+  * Upgrade to bookworm
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Sun, 25 Feb 2024 12:02:45 +0000
+
 linux-base (4.9) unstable; urgency=medium
 
   [ Ben Hutchings ]
