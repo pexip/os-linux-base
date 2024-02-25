@@ -70,7 +70,7 @@ sub sort_versions {
 	@versions = map({[$_, "\n"]} @_);
     } else {
 	while (<STDIN>) {
-	    /^([^ ]*)(.*\n?)$/ or die;
+	    /^([^ \n]*)(.*\n?)$/ or die;
 	    push @versions, [$1, $2];
 	}
     }
