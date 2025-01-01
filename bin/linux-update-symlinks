@@ -65,6 +65,11 @@ sub update_symlink {
 	}
     }
 
+    # Try to apply SELinux label
+    if (-x "/sbin/restorecon" && system("/sbin/restorecon", "$dest.$rand")) {
+	print STDERR "W: Failed to set SELinux label for $dest\n";
+    }
+
     # Move it into place atomically
     if (!rename("$dest.$rand", $dest)) {
 	my $err = "$!";

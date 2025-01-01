@@ -1,3 +1,53 @@
+linux-base (4.11) unstable; urgency=medium
+
+  [ Carles Pina i Estany ]
+  * Update Catalan debconf template translations (poc senderi)
+    (Closes: #1091708)
+
+  [ Noah Meyerhans ]
+  * Set Priority: important for linux-sysctl-defaults
+    linux-sysctl-defaults should be installed by default on the typical Debian
+    system.  Although it is recommended by several components of the default
+    install, Recommends are not applied during debootstrap, so it isn't installed.
+    Raising the priority to important ensures that it's installed in expected
+    places. (Closes: #1090811)
+
+  [ Salvatore Bonaccorso ]
+  * Declare compliance with Debian policy 4.7.0
+  * Update copyright years for debian/* packaging files
+  * linux-sysctl-defaults: dh_install: Make target path relative to package
+    build directory
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 01 Jan 2025 13:33:30 +0100
+
+linux-base (4.10.1) unstable; urgency=medium
+
+  * No-change source upload for testing migration
+
+ -- Ben Hutchings <benh@debian.org>  Tue, 25 Jun 2024 00:48:43 +0200
+
+linux-base (4.10) unstable; urgency=medium
+
+  [ Gioele Barabucci ]
+  * d/control: Bump Standards-Version to 4.6.2 (no changes needed)
+  * d/lintian-overrides: Update syntax
+  * d/lintian-overrides: Ignore templates used by linux-check-removal
+  * d/copyright: Fix spelling of Portuguese
+
+  [ Ben Hutchings ]
+  * Add linux-sysctl-defaults package for sysctl default configuration
+  * d/copyright: Split out translation copyrights by filename
+  * d/copyright: Correct copyright holder for debian/po/vi.po
+  * d/copyright: Add missing copyright holders and dates
+  * linux-update-symlinks: Run restorecon on symlinks if possible
+    (Closes: #906729)
+  * Update debconf template translations:
+    - Update Spanish (Camaleón) (Closes: #1029025)
+    - Update Turkish (Mert Dirik) (Closes: #1030837)
+    - Add Romanian (Remus-Gabriel Chelu) (Closes: #1032336)
+
+ -- Ben Hutchings <benh@debian.org>  Sun, 23 Jun 2024 21:03:28 +0200
+
 linux-base (4.9) unstable; urgency=medium
 
   [ Ben Hutchings ]
