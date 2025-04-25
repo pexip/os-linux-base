@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
 XSBC-Pexip-Original-Uploaders: Ben Hutchings <benh@debian.org>, Salvatore Bonaccorso <carnil@debian.org>
-Standards-Version: 4.6.0
+Standards-Version: 4.7.0
 Build-Depends: debhelper-compat (= 13), libtext-glob-perl <!nocheck>, po4a
 Vcs-Git: https://salsa.debian.org/kernel-team/linux-base.git
 Vcs-Browser: https://salsa.debian.org/kernel-team/linux-base
@@ -20,3 +20,12 @@ Multi-Arch: foreign
 Description: Linux image base package
  This package contains files and support scripts for all Linux
  images.
+
+Package: linux-sysctl-defaults
+Architecture: all
+Priority: important
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: default sysctl configuration for Linux
+ This package contains a sysctl configuration file setting some
+ sensible defaults for Linux.
