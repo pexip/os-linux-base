@@ -1,3 +1,9 @@
+linux-base (4.11+pexip25u1) pexip-trixie; urgency=medium
+
+  * Initial trixie build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 29 Apr 2025 22:40:55 +0100
+
 linux-base (4.11) unstable; urgency=medium
 
   [ Carles Pina i Estany ]
