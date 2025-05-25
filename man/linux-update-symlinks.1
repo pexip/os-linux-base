@@ -5,7 +5,7 @@ linux\-update\-symlinks \- maintain symlinks to default kernel and initramfs
 .SH SYNOPSIS
 .HP
 .BR linux\-update\-symlinks \ { install | upgrade | remove }
-.I VERSION IMAGE\-PATH
+.I KERNEL\-VER IMAGE\-PATH
 
 .SH DESCRIPTION
 \fBlinux\-update\-symlinks\fR is intended to be called from the
@@ -14,8 +14,8 @@ postinst script must pass the first argument \fBinstall\fR or
 \fBupgrade\fR depending on whether a fresh installation or an upgrade
 has taken place.
 .PP
-The \fIVERSION\fR argument must be the kernel version string as shown by
-\fBuname -r\fR and used in filenames.
+The \fIKERNEL\-VER\fR argument must be the kernel version string as shown by
+\fBuname \-r\fR and used in filenames, not the package version.
 .PP
 The \fIIMAGE\-PATH\fR argument must be the absolute filename of the
 kernel image.
@@ -45,7 +45,7 @@ If symlink maintenance is disabled, \fBlinux\-update\-symlinks\fR does
 nothing, successfully.  Otherwise it makes a list of kernel versions
 in decreasing order of priority:
 .IP \(bu 2
-The given \fIVERSION\fR, if the first argument is \fBinstall\fR
+The given \fIKERNEL\-VER\fR, if the first argument is \fBinstall\fR
 .IP \(bu 2
 The current primary default version, if it exists and is not already
 listed
@@ -54,7 +54,7 @@ The current secondary default version, if it exists and is not already
 listed
 .IP \(bu 2
 All other versions whose files are installed, excluding the specified
-\fIVERSION\fR if the first argument is \fBremove\fR, in decreasing
+\fIKERNEL\-VER\fR if the first argument is \fBremove\fR, in decreasing
 version order
 .PP
 The top two entries on the list are the new primary and secondary
@@ -66,9 +66,9 @@ versions and it removes the default symlinks.
 .SH ENVIRONMENT VARIABLES
 .PD 0
 .TP
-.IR INITRD
+.B INITRD
 When the first argument is \fBinstall\fR or \fBupgrade\fR,
-\fBlinux\-update\-symlinks\fR assumes that the given \fIVERSION\fR
+\fBlinux\-update\-symlinks\fR assumes that the given \fIKERNEL\-VER\fR
 will use an initramfs unless this variable is set to \fBNo\fR.
 
 .SH FILES

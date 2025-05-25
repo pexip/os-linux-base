@@ -25,15 +25,15 @@ use POSIX ();
 sub usage {
     my $fh = shift;
     print $fh (<< "EOT");
-Usage: $0 VERSION
+Usage: $0 KERNEL-VER
 
 This command is intended to be called from the prerm maintainer scripts
 of Linux kernel packages.
 
-The VERSION argument must be the kernel version string as shown by
-'uname -r' and used in filenames.
+The KERNEL-VER argument must be the kernel version string as shown by
+'uname -r' and used in filenames, not the package version.
 
-If the currently running kernel matches VERSION, linux-check-removal
+If the currently running kernel matches KERNEL-VER, linux-check-removal
 will normally prompt the user to confirm this potentially dangerous
 action and will fail if the user chooses to abort.  However, if the
 current environment is in a chroot or container, or if debconf

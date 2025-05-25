@@ -24,12 +24,12 @@ use DebianLinux qw(version_cmp image_list);
 sub usage {
     my $fh = shift;
     print $fh (<< "EOT");
-Usage: $0 compare VERSION1 OP VERSION2
-       $0 sort [--reverse] [VERSION1 VERSION2 ...]
+Usage: $0 compare KERNEL-VER-1 OP KERNEL-VER-2
+       $0 sort [--reverse] [KERNEL-VER-1 KERNEL-VER-2 ...]
        $0 list [--paths]
 
-The version arguments should be kernel version strings as shown by
-'uname -r' and used in filenames.
+The version arguments must be kernel version strings as shown by
+'uname -r' and used in filenames, not package versions.
 
 The valid comparison operators are: lt le eq ge gt
 EOT

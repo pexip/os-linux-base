@@ -26,15 +26,15 @@ use DebianLinux qw(image_stem image_list read_kernelimg_conf version_cmp);
 sub usage {
     my $fh = shift;
     print $fh (<< "EOT");
-Usage: $0 {install|upgrade|remove} VERSION IMAGE-PATH
+Usage: $0 {install|upgrade|remove} KERNEL-VER IMAGE-PATH
 
 This command is intended to be called from the postinst and postrm
 maintainer scripts of Linux kernel packages.  The postinst script must
 pass the first argument 'install' or 'upgrade' depending on whether a
 fresh installation or an upgrade has taken place.
 
-The VERSION argument must be the kernel version string as shown by
-'uname -r' and used in filenames.
+The KERNEL-VER argument must be the kernel version string as shown by
+'uname -r' and used in filenames, not the package version.
 
 The IMAGE-PATH argument must be the absolute filename of the kernel
 image.

@@ -3,15 +3,15 @@
 linux\-check\-removal \- check whether removal of a kernel is safe
 .SH SYNOPSIS
 .HP
-.BI linux\-check\-removal \ VERSION
+.BI linux\-check\-removal \ KERNEL\-VER
 .SH DESCRIPTION
 \fBlinux\-check\-removal\fR is intended to be called from the prerm
 maintainer scripts of Linux kernel packages.
 .PP
-The \fIVERSION\fR argument must be the kernel version string as shown by
-\fBuname -r\fR and used in filenames.
+The \fIKERNEL\-VER\fR argument must be the kernel version string as shown by
+\fBuname \-r\fR and used in filenames, not the package version.
 .PP
-If the currently running kernel matches \fIVERSION\fR,
+If the currently running kernel matches \fIKERNEL\-VER\fR,
 \fBlinux\-check\-removal\fR normally prompts the user to confirm
 this potentially dangerous action and fails if the user chooses to
 abort.  There are two exceptions to this behaviour:
