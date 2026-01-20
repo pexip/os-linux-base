@@ -1,3 +1,12 @@
+linux-base (4.12.1) trixie; urgency=medium
+
+  * d/salsa-ci.yml: Set RELEASE to trixie
+  * linux-run-hooks(1): Fix description of the first argument
+  * linux-run-hooks: Use compatible hook dir names for headers packages
+    (Closes: #1121366)
+
+ -- Ben Hutchings <benh@debian.org>  Tue, 20 Jan 2026 13:44:51 +0100
+
 linux-base (4.12) unstable; urgency=medium
 
   * d/changelog: Word-wrap previous entry to under 80 characters
