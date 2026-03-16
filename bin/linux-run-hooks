@@ -92,7 +92,6 @@ if ($ARGV[0] eq 'help' or grep({$_ eq '--help'} @ARGV)) {
 
 my ($pkg_type, $script_type) = @ARGV;
 if (!defined($pkg_type)
-    or ($pkg_type ne 'image' and $pkg_type ne 'headers')
     or !defined($script_type)
     or ($script_type !~ /^(?:pre|post)(?:inst|rm)$/)) {
     usage_error();
@@ -101,9 +100,13 @@ my ($hook_type, $n_hook_args);
 if ($pkg_type eq 'image') {
     $hook_type = $script_type;
     $n_hook_args = 2;
-} else {
-    $hook_type = "${pkg_type}_${script_type}";
+} elsif ($pkg_type eq 'headers') {
+    # For backward compatibility, hook directory names start with
+    # 'header_' not 'headers_'
+    $hook_type = "header_${script_type}";
     $n_hook_args = 1;
+} else {
+    usage_error();
 }
 my ($arg_sep_index) = grep({ $ARGV[$_] eq '--' } 2..$#ARGV);
 if (!defined($arg_sep_index)

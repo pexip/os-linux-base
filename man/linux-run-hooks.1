@@ -14,10 +14,8 @@ scripts of Linux kernel image and headers packages.  It uses the
 \fBrun-parts\fR command to execute hooks installed in the appropriate
 subdirectories of \fB/etc/kernel\fR and \fB/usr/share/kernel\fR.
 .PP
-Each maintainer script in a kernel image package should call this
-command with its script type as the first argument.  The postinst
-script in a headers package should call it with \fBheaders_postinst\fR
-as the first argument.
+The first argument is the package type; either \fBimage\fR or
+\fBheaders\fR.
 .PP
 The \fIMAINT\-SCRIPT\fR argument must be the name of the maintainer
 script: \fBpreinst\fR, \fBpostinst\fR, \fBprerm\fR, or \fBpostrm\fR.
